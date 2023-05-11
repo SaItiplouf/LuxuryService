@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+
+	<section class="section-padding gray-bg log-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-sm-offset-3 card card-panel">
+					<h3 class="text-extrabold">Create a new account</h3>
+
+					{{ form_start(registrationForm) }}
+					{{ form_row(registrationForm.email) }}
+					{{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+					<div class="checkbox">
+						<input type="checkbox" name="agreeTerms" value="1" id="agreeTerms" required/>
+						<label for="agreeTerms">I have read and I accept the
+							<a href="#!" target="_blank">Terms Of Use</a>
+						</label>
+					</div>
+
+					<button type="submit" class="btn">Register</button>
+					{{ form_end(registrationForm) }}
+				</div>
+
+			</div>
+		</div>
+	</section>
+{% endblock %}
